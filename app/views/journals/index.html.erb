@@ -1,0 +1,19 @@
+<h1>Listing journals</h1>
+ 
+<table>
+  <tr>
+    <th>Dergi adi</th>
+    <th>ISSN</th>
+    <th>Score</th>
+    <th>Payout</th>
+  </tr>
+ 
+  <% @journals.each do |journal| %>
+    <tr>
+      <td><%= journal.title %></td>
+      <td><%= journal.issn %></td>
+      <td><%= journal.score %></td>
+      <td><%= journal.payout %></td>
+    </tr>
+  <% end %>
+</table>
