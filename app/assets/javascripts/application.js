@@ -30,6 +30,22 @@ $(function () {
   });
 });
 
+
+$(function () {
+  $("#sci_journals_filter input").keyup(function() {
+    $.get(
+        $("#sci_journals_filter").attr("quicklook"),
+        $("#sci_journals_filter").serialize() + "&quicklook=1",
+        function(data){
+            //$('#content').html(data)
+            $('#total_count_text').html(data)
+        },
+        "html"
+    );
+    return false;
+  });
+});
+
 // $(document).ready(function () {
 //   $("body").on("click", '.pagination a', function(e){
 //     e.preventDefault();

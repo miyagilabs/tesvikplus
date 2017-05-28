@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   get 'search/index'
+  get 'sci_search/index'
 
   get 'welcome/index'
 
   resources :journals
+  resources :sci_journals
   
   #root 'welcome#index'
   root 'journals#index'

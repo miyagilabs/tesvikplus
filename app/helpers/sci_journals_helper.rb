@@ -1,0 +1,2 @@
+module SciJournalsHelper
+end

@@ -1,0 +1,35 @@
+<h1>SCI-A Listesinde Yer Alan Dergiler</h1>
+
+
+<div id="back">
+    <%= link_to "Back to the main page", sci_journals_path %>
+</div>
+
+<div class="pagination_block">
+    <div class="page_info">
+        <%= page_entries_info @sci_journals %>
+    </div>
+    <%= will_paginate @sci_journals, :container => true %>
+</div>
+
+<table style="width:500px">
+  <thead>
+  <tr>
+    <th style="text-align:left;">Dergi kısaltması</th>
+    <th style="text-align:left;">Dergi adı</th>
+    <th style="text-align:left;">ISSN</th>
+    <th style="text-align:left;">Konu</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @sci_journals.each do |journal| %>
+    <tr>
+      <td><%= journal.abbreviation %></td>
+      <td><%= journal.title %></td>
+      <td><%= journal.issn %></td>
+      <td><%= journal.subject %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

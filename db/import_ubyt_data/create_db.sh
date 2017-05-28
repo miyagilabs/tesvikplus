@@ -1,1 +1,1 @@
-sqlite3 tesvik2016.sqlite3 < create.sql
+sqlite3 development.sqlite3 < create.sql

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  'no': 
+  abbreviation: MyString
+  title: MyString
+  issn: MyString
+  subject: MyString
+
+two:
+  'no': 
+  abbreviation: MyString
+  title: MyString
+  issn: MyString
+  subject: MyString

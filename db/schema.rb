@@ -11,13 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170528110059) do
+ActiveRecord::Schema.define(version: 20170528193816) do
 
   create_table "journals", id: false, force: :cascade do |t|
     t.string "title"
     t.string "issn"
     t.float  "score"
     t.float  "payout"
+  end
+
+  create_table "sci_journals", id: false, force: :cascade do |t|
+    t.integer "no"
+    t.string  "abbreviation"
+    t.string  "title"
+    t.string  "issn"
+    t.string  "subject"
   end
 
 end
