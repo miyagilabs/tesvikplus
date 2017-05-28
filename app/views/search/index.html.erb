@@ -1,0 +1,35 @@
+<h1>Teşvik Listesinde Yer Alan Dergiler</h1>
+
+
+<div id="back">
+    <%= link_to "Back to the main page", journals_path %>
+</div>
+
+<div class="pagination_block">
+    <div class="page_info">
+        <%= page_entries_info @journals %>
+    </div>
+    <%= will_paginate @journals, :container => true %>
+</div>
+
+<table style="width:500px">
+  <thead>
+  <tr>
+    <th style="text-align:left;">Dergi adı</th>
+    <th style="text-align:left;">ISSN</th>
+    <th style="text-align:left;">Dergi Puanı</th>
+    <th style="text-align:left;">Teşvik Miktarı</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @journals.each do |journal| %>
+    <tr>
+      <td><%= journal.title %></td>
+      <td><%= journal.issn %></td>
+      <td><%= journal.score %></td>
+      <td><%= journal.payout %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

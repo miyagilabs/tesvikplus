@@ -12,5 +12,28 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//# require turbolinks
 //= require_tree .
+
+$(function () {
+  $("#journals_filter input").keyup(function() {
+    $.get(
+        $("#journals_filter").attr("quicklook"),
+        $("#journals_filter").serialize() + "&quicklook=1",
+        function(data){
+            //$('#content').html(data)
+            $('#total_count_text').html(data)
+        },
+        "html"
+    );
+    return false;
+  });
+});
+
+// $(document).ready(function () {
+//   $("body").on("click", '.pagination a', function(e){
+//     e.preventDefault();
+//     $.getScript(this.href);
+//     return false;
+//   });
+// });

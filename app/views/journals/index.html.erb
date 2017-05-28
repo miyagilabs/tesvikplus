@@ -1,19 +1,11 @@
-<h1>Listing journals</h1>
- 
-<table>
-  <tr>
-    <th>Dergi adi</th>
-    <th>ISSN</th>
-    <th>Score</th>
-    <th>Payout</th>
-  </tr>
- 
-  <% @journals.each do |journal| %>
-    <tr>
-      <td><%= journal.title %></td>
-      <td><%= journal.issn %></td>
-      <td><%= journal.score %></td>
-      <td><%= journal.payout %></td>
-    </tr>
-  <% end %>
-</table>
+
+<h1>Teşvik Listesinde Yer Alan Dergiler</h1>
+
+<%= form_tag search_index_path, :method => 'get', :id => "journals_filter", :quicklook=>journals_path do %>
+  Eşleşen toplam dergi sayısı: <span id="total_count_text"><%= @total_count %></span>
+  <p>
+    <%= text_field_tag :filter, params[:filter],placeholder: 'Kelime giriniz...' %>
+  </p>
+  
+  <%= submit_tag "Dergileri Listele", :name => nil %>
+<% end %>
